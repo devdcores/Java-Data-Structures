@@ -1,6 +1,6 @@
 # Java-Data-Structures
 
-Implementing Data Structues and Alrorithms in Java locally and Pushing here.
+Implementing Data Structues and Algorithms in Java locally and Pushing here.
 
 Implemented Data Structures
 
