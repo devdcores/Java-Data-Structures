@@ -1,5 +1,8 @@
 package com.dataStructures.linkedList;
 
+/**
+ * @author devaraj reddy
+ */
 public class LinkedListMain {
   public static void main(String[] args) {
     LinkedList linkedList = new LinkedList();

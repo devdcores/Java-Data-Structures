@@ -1,5 +1,9 @@
 package com.dataStructures.doubleLinkedList;
 
+/**
+ * @author devaraj reddy
+ * @description Double linked list is the collection of nodes, where we can traverse from both the sides.
+ */
 public class DoubleLinkedList {
   
   Node firstNode;
@@ -113,6 +117,7 @@ public class DoubleLinkedList {
   }
   
   public void display() {
+    System.out.println();
     System.out.println("*********************Start of Display ***********************");
     if (!isEmpty()) {
       Node node = firstNode;

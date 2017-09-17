@@ -1,34 +1,37 @@
 package com.dataStructures.doubleLinkedList;
 
+/**
+ * @author devaraj reddy
+ */
 public class DoubleLinkedListMain {
   public static void main(String[] args) {
     DoubleLinkedList doubleLinkedList = new DoubleLinkedList();
-  
+    
     System.out.println("------> insert In First Position");
     Node firstNode = new Node("1st Neighbour", 123);
     doubleLinkedList.insertInFirstPosition(firstNode);
     doubleLinkedList.display();
-  
+    
     System.out.println("------> insert In First Position");
     Node secondNode = new Node("2nd Neighbour", 234);
     doubleLinkedList.insertInFirstPosition(secondNode);
     doubleLinkedList.display();
-  
+    
     System.out.println("------> Remove At First Position");
     doubleLinkedList.removeAtFirstPosition();
     doubleLinkedList.display();
-  
-    System.out.println("------> insert In First Position");
+    
+    System.out.println("------> insert In Last Position");
     Node thirdNode = new Node("3rd Neighbour", 456);
-    doubleLinkedList.insertInFirstPosition(thirdNode);
+    doubleLinkedList.insertInLastPosition(thirdNode);
     doubleLinkedList.display();
-  
+    
     System.out.println("------> Remove At Last Position");
     doubleLinkedList.removeAtLastPosition();
     doubleLinkedList.display();
     
     /*
-    uncomment below code and comment all other code for inorder traversal.
+    uncomment below code and comment all other code for inorder adding nodes..
     
     DoubleLinkedList doubleLinkedList = new DoubleLinkedList();
     
@@ -50,5 +53,37 @@ public class DoubleLinkedListMain {
 
     doubleLinkedList.display();
     */
+    
+    Node fourthNode = new Node("4th Neighbour", 677);
+    Node fifthNode = new Node("5th Neighbour", 789);
+    Node sixthNode = new Node("6th Neighbour", 890);
+    doubleLinkedList.insertInFirstPosition(fourthNode);
+    doubleLinkedList.insertInFirstPosition(fifthNode);
+    doubleLinkedList.insertInFirstPosition(sixthNode);
+    
+    doubleLinkedList.display();
+  
+    System.out.println();
+    System.out.println();
+    System.out.println("-----> Using iterator operations");
+    DoubleLinkedListIterator doubleLinkedListIterator = new DoubleLinkedListIterator(doubleLinkedList);
+    
+    System.out.println("Current Node : " + doubleLinkedListIterator.currentNode);
+    
+    System.out.println("-----> remove ");
+    doubleLinkedListIterator.remove();
+    System.out.println("Current Node : " + doubleLinkedListIterator.currentNode);
+    
+    System.out.println("-----> next ");
+    doubleLinkedListIterator.next();
+    
+    System.out.println("-----> remove");
+    doubleLinkedListIterator.remove();
+    System.out.println("Current Node : " + doubleLinkedListIterator.currentNode);
+    
+    System.out.println("-----> remove");
+    doubleLinkedListIterator.remove();
+    
+    System.out.println("Current Node : " + doubleLinkedListIterator.currentNode);
   }
 }
