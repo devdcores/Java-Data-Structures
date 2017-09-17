@@ -2,13 +2,11 @@ package com.dataStructures.doubleLinkedList;
 
 public class DoubleLinkedListIterator {
   Node currentNode;
-  Node previousNode;
   DoubleLinkedList doubleLinkedList;
   
   public DoubleLinkedListIterator(DoubleLinkedList doubleLinkedList) {
     this.doubleLinkedList = doubleLinkedList;
     currentNode = doubleLinkedList.firstNode;
-    previousNode =doubleLinkedList.lastNode;
   }
   
   public boolean hasNext() {
@@ -20,7 +18,6 @@ public class DoubleLinkedListIterator {
   
   public Node next() {
     if (hasNext()) {
-      previousNode = this.currentNode;
       currentNode = currentNode.getNext();
       return currentNode;
     }
