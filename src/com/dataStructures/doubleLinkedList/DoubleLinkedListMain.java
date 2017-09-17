@@ -3,31 +3,34 @@ package com.dataStructures.doubleLinkedList;
 public class DoubleLinkedListMain {
   public static void main(String[] args) {
     DoubleLinkedList doubleLinkedList = new DoubleLinkedList();
-//    Node firstNode = new Node("1st Neighbour", 123);
-//    doubleLinkedList.insertInFirstPosition(firstNode);
-//    doubleLinkedList.display();
-//    Node secondNode = new Node("2nd Neighbour", 234);
-//    doubleLinkedList.insertInFirstPosition(secondNode);
-//    //doubleLinkedList.display();
-//
-//    Node thirdNode = new Node("3rd Neighbour", 456);
-//    doubleLinkedList.insertInFirstPosition(thirdNode);
-//
-//    Node fourthNode = new Node("4th Neighbour", 789);
-//    doubleLinkedList.insertInFirstPosition(fourthNode);
-//    doubleLinkedList.display();
-//
-//    Node zeroNode = new Node("0th Neighbour", 123);
-//    doubleLinkedList.insertInLastPosition(zeroNode);
-//
-//    Node minus1Node = new Node("-1th Neighbour", 123);
-//    doubleLinkedList.insertInLastPosition(minus1Node);
-//    doubleLinkedList.display();
-//
-//    Node afterNode = new Node("after Neighbour", 123);
-//    doubleLinkedList.insertAfterKey(afterNode,"4th Neighbour");
-//    doubleLinkedList.display();
+  
+    System.out.println("------> insert In First Position");
+    Node firstNode = new Node("1st Neighbour", 123);
+    doubleLinkedList.insertInFirstPosition(firstNode);
+    doubleLinkedList.display();
+  
+    System.out.println("------> insert In First Position");
+    Node secondNode = new Node("2nd Neighbour", 234);
+    doubleLinkedList.insertInFirstPosition(secondNode);
+    doubleLinkedList.display();
+  
+    System.out.println("------> Remove At First Position");
+    doubleLinkedList.removeAtFirstPosition();
+    doubleLinkedList.display();
+  
+    System.out.println("------> insert In First Position");
+    Node thirdNode = new Node("3rd Neighbour", 456);
+    doubleLinkedList.insertInFirstPosition(thirdNode);
+    doubleLinkedList.display();
+  
+    System.out.println("------> Remove At Last Position");
+    doubleLinkedList.removeAtLastPosition();
+    doubleLinkedList.display();
     
+    /*
+    uncomment below code and comment all other code for inorder traversal.
+    
+    DoubleLinkedList doubleLinkedList = new DoubleLinkedList();
     
     Node Node1 = new Node("Neighbour 1", 1);
     Node Node2 = new Node("Neighbour 2", 2);
@@ -36,7 +39,7 @@ public class DoubleLinkedListMain {
     Node Node5 = new Node("Neighbour 5", 5);
     Node Node6 = new Node("Neighbour 6", 6);
     Node Node7 = new Node("Neighbour 7", 7);
-    
+
     doubleLinkedList.insertInOrder(Node1);
     doubleLinkedList.insertInOrder(Node5);
     doubleLinkedList.insertInOrder(Node3);
@@ -46,5 +49,6 @@ public class DoubleLinkedListMain {
     doubleLinkedList.insertInOrder(Node6);
 
     doubleLinkedList.display();
+    */
   }
 }

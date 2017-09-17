@@ -8,6 +8,10 @@ public class DoubleLinkedList {
   public DoubleLinkedList() {
   }
   
+  /**
+   * @param node
+   * @description add node at the first position.
+   */
   public void insertInFirstPosition(Node node) {
     if (isEmpty()) {
       lastNode = node;
@@ -18,6 +22,21 @@ public class DoubleLinkedList {
     firstNode = node;
   }
   
+  public Node removeAtFirstPosition() {
+    if (!isEmpty()) {
+      Node next = firstNode.getNext();
+      firstNode = next;
+      firstNode.setPrevious(null);
+    } else {
+      System.out.println("Empty List!!!!");
+    }
+    return null;
+  }
+  
+  /**
+   * @param newNode
+   * @description add node at the last position.
+   */
   public void insertInLastPosition(Node newNode) {
     if (isEmpty()) {
       firstNode = newNode;
@@ -28,6 +47,23 @@ public class DoubleLinkedList {
     lastNode = newNode;
   }
   
+  public Node removeAtLastPosition() {
+    if (!isEmpty()) {
+      Node previous = lastNode.getPrevious();
+      lastNode = previous;
+      lastNode.setNext(null);
+    } else {
+      System.out.println("Empty List!!!!");
+    }
+    return null;
+  }
+  
+  /**
+   * @param newNode
+   * @param key
+   * @return true if node inserted in to the list.
+   * @description insert newNode after the keyNode.
+   */
   public boolean insertAfterKey(Node newNode, String key) {
     if (isEmpty()) {
       return false;
@@ -48,21 +84,23 @@ public class DoubleLinkedList {
     return false;
   }
   
+  /**
+   * @param newNode
+   * @description add the nodes in an order.
+   */
   public void insertInOrder(Node newNode) {
-    
     Node previousNode = null;
-    
     if (isEmpty()) {
       firstNode = newNode;
     } else {
       Node node = firstNode;
-      while (node != null && newNode.getPhoneNumber() > node.getPhoneNumber()) {
+      while (node != null && newNode.getPhoneNumber() > node.getPhoneNumber()) { // check both conditions, because we have to insert in order.
         previousNode = node;
         node = node.getNext();
       }
       previousNode.setNext(newNode);
       newNode.setPrevious(previousNode);
-      if (node != null) {
+      if (node != null) { // to avoid null pointer exception at the last node.
         newNode.setNext(node);
         node.setPrevious(newNode);
       }
@@ -79,10 +117,13 @@ public class DoubleLinkedList {
     if (!isEmpty()) {
       Node node = firstNode;
       while (node != null) {
-        System.out.println(node.getHouseOwnerName() + " ::::: " + node.getPhoneNumber());
+        System.out.println("*        Previous Node : " + node.getPrevious());
+        System.out.println("*        >>>>>>>> " + node.getHouseOwnerName() + " ::::: " + node.getPhoneNumber());
+        System.out.println("*        Next Node : " + node.getNext());
+        System.out.println("*");
         node = node.getNext();
       }
     }
-    System.out.println("*********************End of Display ***********************");
+    System.out.println("*********************End of Display *************************");
   }
 }

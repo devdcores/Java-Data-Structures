@@ -1,5 +1,8 @@
 package com.dataStructures.doubleLinkedList;
 
+/**
+ * @author devaraj reddy
+ */
 public class Node {
   private String houseOwnerName;
   private int phoneNumber;
@@ -7,6 +10,11 @@ public class Node {
   private Node previous;
   private Node next;
   
+  /**
+   * @description Construct the node object with bookName and noOfBookSold.
+   * @param houseOwnerName
+   * @param phoneNumber
+   */
   public Node(String houseOwnerName, int phoneNumber) {
     this.houseOwnerName = houseOwnerName;
     this.phoneNumber = phoneNumber;
