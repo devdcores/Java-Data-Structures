@@ -163,10 +163,18 @@ public class LinkedList {
     return null;
   }
   
-  public boolean insertAfterNode(Node newNode, String keyBookNames){
+  /**
+   * @description add node in to the list after the keyNode.
+   * @logic first the node with the keyBookName.
+   * set newNode's next to found node's next, and found node's next to newNode.
+   * @param newNode
+   * @param keyBookName
+   * @return true if newNode inserted into the list.
+   */
+  public boolean insertAfterNode(Node newNode, String keyBookName){
     Node node=firstNode;
     while(node!=null){
-      if(node.getBookName().equals(keyBookNames)){
+      if(node.getBookName().equals(keyBookName)){
         newNode.setNext(node.getNext());
         node.setNext(newNode);
         return true;
