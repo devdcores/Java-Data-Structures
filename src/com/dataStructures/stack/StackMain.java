@@ -1,7 +1,5 @@
 package com.dataStructures.stack;
 
-import java.util.Arrays;
-
 /**
  * @author : devaraj reddy
  * @description : StackMain Class
