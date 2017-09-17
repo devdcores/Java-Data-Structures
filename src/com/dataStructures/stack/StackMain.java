@@ -2,36 +2,45 @@ package com.dataStructures.stack;
 
 import java.util.Arrays;
 
+/**
+ * @author : devaraj reddy
+ * @description : StackMain Class
+ */
 public class StackMain {
-    public static void main(String[] args) {
-        Stack stack =new Stack(5);
-        stack.push("Devaraj");
-        System.out.println("Elements : "+Arrays.asList(stack.allElementsInStack()));
-        
-        stack.push("Reddy");
-        System.out.println("Elements : "+Arrays.asList(stack.allElementsInStack()));
-        System.out.println("Peek Element  : "+stack.peek());
-        
-        stack.pop();
-        System.out.println("Peek Element  : "+stack.peek());
-        
-        stack.pop();
-        System.out.println("Peek Element  : "+stack.peek());
-        
-        stack.pop();
-    
-        stack.push("Devaraj");
-        System.out.println("Elements : "+Arrays.asList(stack.allElementsInStack()));
-        System.out.println("Peek Element  : "+stack.peek());
-    
-        stack.push("rale");
-        System.out.println("Elements : "+Arrays.asList(stack.allElementsInStack()));
-        System.out.println("Peek Element  : "+stack.peek());
-    
-        stack.push("3");
-        stack.push("4");
-        stack.push("5");
-        System.out.println("Elements : "+Arrays.asList(stack.allElementsInStack()));
-        stack.push("6");
-    }
+		
+		public static void main(String[] args) {
+				// Initialize the size of the stack.
+				Stack stack =new Stack(4);
+				
+				System.out.println("check is empty stack : "+stack.isEmpty());
+				
+				System.out.println("$$$$$$$$ pushing some elements $$$$$$$$");
+				//Push some elements into the stack.
+				stack.push("Devaraj");
+				stack.push("Reddy");
+				stack.push("G");
+				
+				//Display the present elements.
+				stack.display();
+				
+				System.out.println("check is empty stack : "+stack.isEmpty());
+				
+				System.out.println("$$$$$$$$ poping some elements $$$$$$$$");
+				
+				//Pop some elements from the stack.
+				stack.pop();
+				stack.pop();
+				
+				//Display the present elements.
+				stack.display();
+				
+				System.out.println("$$$$$$$$ Stack Overflow happens when the limit exceeds. $$$$$$$$");
+				
+				//Push some more elements to show stack overflow.
+				stack.push("bangalore");
+				stack.push("india");
+				stack.push("karnataka");
+				stack.push("kgf");
+				
+		}
 }
