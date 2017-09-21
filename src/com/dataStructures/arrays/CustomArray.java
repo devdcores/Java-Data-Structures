@@ -58,18 +58,54 @@ public class CustomArray {
   }
   
   public String linearSearch(int value) {
-    StringBuilder str = new StringBuilder();
-    boolean valueInArray=false;
+    String str = "";
+    boolean valueInArray = false;
     for (int i = 0; i < array.length; i++) {
       if (array[i] == value) {
-        str.append(i+" ");
-        valueInArray=true;
+        str = str + i + " ";
+        valueInArray = true;
       }
     }
-    if(!valueInArray){
-      str.append("None");
+    if (!valueInArray) {
+      str = "None";
     }
-    return str.toString();
+    return str;
+  }
+  
+  public void bubbleSortAscending() {
+    for (int i = size - 1; i > 1; i--) {
+      for (int j = 0; j < i; j++) {
+        if (array[j] > array[j + 1]) {
+          int temp = array[j];
+          array[j] = array[j + 1];
+          array[j + 1] = temp;
+        }
+      }
+    }
+  }
+  
+  public void binarySearch(int value) {
+    
+    int low = 0;
+    int high = size - 1;
+    
+    while (low <= high) {
+      int mid = (low + high) / 2;
+      if (value < array[mid]) {
+        low = 0;
+        high = mid;
+      } else if (value == array[mid]) {
+        System.out.println("Value found at index : " + mid);
+        break;
+      } else {
+        low = mid;
+        high = size - 1;
+      }
+    }
+  }
+  
+  public void selectionSort(){
+    
   }
   
   
