@@ -76,9 +76,10 @@ public class CustomArray {
     for (int i = size - 1; i > 1; i--) {
       for (int j = 0; j < i; j++) {
         if (array[j] > array[j + 1]) {
-          int temp = array[j];
-          array[j] = array[j + 1];
-          array[j + 1] = temp;
+          swap(j, j + 1);
+//          int temp = array[j];
+//          array[j] = array[j + 1];
+//          array[j + 1] = temp;
         }
       }
     }
@@ -88,26 +89,42 @@ public class CustomArray {
     
     int low = 0;
     int high = size - 1;
+    boolean found = false;
     
     while (low <= high) {
       int mid = (low + high) / 2;
       if (value < array[mid]) {
-        low = 0;
-        high = mid;
+        high = mid - 1;
       } else if (value == array[mid]) {
-        System.out.println("Value found at index : " + mid);
+        System.out.println("Value : " + value + ", found at index : " + mid);
+        found = true;
         break;
       } else {
-        low = mid;
-        high = size - 1;
+        low = mid + 1;
       }
+    }
+    
+    if (!found) {
+      System.out.println("Value : " + value + ", not found in the array.");
     }
   }
   
-  public void selectionSort(){
-    
+  public void selectionSort() {
+    for (int i = 0; i < size; i++) {
+      int minimum = i;
+      for (int j = i; j < size; j++) {
+        if (array[minimum] > array[j]) {
+          minimum = j;
+        }
+      }
+      swap(minimum, i);
+    }
   }
   
-  
+  private void swap(int a, int b) {
+    int temp = array[a];
+    array[a] = array[b];
+    array[b] = temp;
+  }
 }
 
