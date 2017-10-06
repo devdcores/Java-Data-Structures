@@ -10,11 +10,11 @@ public class ArrayMain {
 
     System.out.println(">>>>>>>> Array at index 4 : "+customArray.getValueAtIndex(4));
     System.out.println(">>>>>>>> Does array contain value 14 : "+customArray.doesArrayContainThisValue(14));
-  
+
     System.out.println(">>>>>>>> Delete from array at index : 5");
     customArray.deleteIndex(5);
     customArray.printArray();
-  
+
     System.out.println(">>>>>>>> Insert value into array.");
     customArray.insertValue(123);
     customArray.printArray();
@@ -27,12 +27,20 @@ public class ArrayMain {
   
     System.out.println(">>>>>>>> Binary Search.");
     customArray.binarySearch(16);
-    
-    
+  
+    System.out.println(">>>>>>>> Generating random array.");
+    customArray.generateArray();
+    customArray.printArray();
     System.out.println(">>>>>>>> Sorting the array using Selection Sort.");
     customArray.selectionSort();
     customArray.printArray();
-    
-    
+  
+    System.out.println(">>>>>>>> Generating random array.");
+    customArray.generateArray();
+    customArray.printArray();
+    System.out.println(">>>>>>>> Sorting the array using Insertion Sort.");
+    customArray.insertionSort();
+    customArray.printArray();
+   
   }
 }

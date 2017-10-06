@@ -1,7 +1,10 @@
 package com.dataStructures.arrays;
 
+/**
+ * @author devaraj reddy
+ */
 public class CustomArray {
-  public int[] array = new int[100];
+  public int[] array = null;
   private int size;
   
   public CustomArray(int size) {
@@ -10,6 +13,7 @@ public class CustomArray {
   
   //Insert Some elements in to the array.
   public void generateArray() {
+    array = new int[100];;
     for (int i = 0; i < size; i++) {
       array[i] = (int) (Math.random() * 10 + 10);
     }
@@ -24,12 +28,21 @@ public class CustomArray {
     System.out.println("----------");
   }
   
+  /**
+   * @param index
+   * @return the value at index in the array.
+   */
   public int getValueAtIndex(int index) {
-    if (index < size)
+    if (index >=0 && index < size)
       return array[index];
     return 0;
   }
   
+  /**
+   * @description check weather value exists in the array.
+   * @param value
+   * @return true if the value exists in the array, else false.
+   */
   public boolean doesArrayContainThisValue(int value) {
     for (int i = 0; i < array.length; i++) {
       if (array[i] == value) {
@@ -39,6 +52,10 @@ public class CustomArray {
     return false;
   }
   
+  /**
+   * @description delete the value in the array for index in params.
+   * @param index
+   */
   public void deleteIndex(int index) {
     if (index < size) {
       for (int i = index; i < array.length - 1; i++) {
@@ -48,6 +65,10 @@ public class CustomArray {
     }
   }
   
+  /**
+   * @description add the value to end of the array.
+   * @param value
+   */
   public void insertValue(int value) {
     if (size < 100) {
       array[size] = value;
@@ -57,6 +78,12 @@ public class CustomArray {
     }
   }
   
+  /**
+   * @description to find the indexes of the value.
+   * @logic traverse through the array, check the value at the index matches the param value, if yes add the indexes to string array and return.
+   * @param value
+   * @return the index's of the value.
+   */
   public String linearSearch(int value) {
     String str = "";
     boolean valueInArray = false;
@@ -72,19 +99,29 @@ public class CustomArray {
     return str;
   }
   
+  /**
+   * This is the worst sort algorithm in terms of time.
+   * @description sort the values in the array.
+   * @logic move the biggest number in the array to the end of the array.
+   * For every iteration in inner for loop the biggest number moves to the end.
+   */
   public void bubbleSortAscending() {
     for (int i = size - 1; i > 1; i--) {
       for (int j = 0; j < i; j++) {
         if (array[j] > array[j + 1]) {
           swap(j, j + 1);
-//          int temp = array[j];
-//          array[j] = array[j + 1];
-//          array[j + 1] = temp;
         }
       }
     }
   }
   
+  /**
+   * @description search the value in the array and print.
+   * @logic Binary search works based on divide and conquer algorithm.
+   * For this algorithm to work the values has to be in sorted order.
+   * divide the array into two parts and check the value is present in which part, do this until the value if found.
+   * @param value
+   */
   public void binarySearch(int value) {
     
     int low = 0;
@@ -109,6 +146,11 @@ public class CustomArray {
     }
   }
   
+  /**
+   * @description to sort the values in the array. Better than bubble sort.
+   * @logic make the current element as minimum and check is there any minimum value in rest of the array,
+   * if yes then swap. else increment and repeat the same.
+   */
   public void selectionSort() {
     for (int i = 0; i < size; i++) {
       int minimum = i;
@@ -120,11 +162,27 @@ public class CustomArray {
       swap(minimum, i);
     }
   }
-  
+  //Swap the two values in the array based on index.
   private void swap(int a, int b) {
     int temp = array[a];
     array[a] = array[b];
     array[b] = temp;
+  }
+  
+  /**
+   * @description to sort the values in the array. Better than selection sort. good for less size of data sets.
+   * @logic all the elements before the current element should be sorted..
+   * since there are no elements to first element, so it is already sorted.
+   */
+  public void insertionSort() {
+    for (int i = 1; i < size; i++) {
+      int j = i;
+      while (i > 0 && array[i] < array[i - 1]) {
+        swap(i, i - 1);
+        i--;
+      }
+      i = j;
+    }
   }
 }
 
