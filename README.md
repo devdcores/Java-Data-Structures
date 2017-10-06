@@ -11,3 +11,14 @@ Implemented Data Structures
  -> Linked List
  
  -> Double Linked List
+ 
+ 
+Implemented Algorithms
+
+ -> Linear Search
+ 
+ -> Bubble Sort
+ 
+ -> Binary Search
+ 
+ -> Selection Sort
