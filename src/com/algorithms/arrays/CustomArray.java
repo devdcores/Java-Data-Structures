@@ -1,4 +1,4 @@
-package com.dataStructures.arrays;
+package com.algorithms.arrays;
 
 /**
  * @author devaraj reddy
