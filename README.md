@@ -8,6 +8,8 @@ Implemented Data Structures
  
  -> Stacks
  
+ -> Queues
+ 
  -> Linked List
  
  -> Double Linked List
@@ -22,3 +24,5 @@ Implemented Algorithms
  -> Binary Search
  
  -> Selection Sort
+ 
+ -> Insertion Sort
