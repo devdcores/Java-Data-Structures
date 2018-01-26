@@ -13,7 +13,8 @@ public class CustomArray {
   
   //Insert Some elements in to the array.
   public void generateArray() {
-    array = new int[100];;
+    array = new int[100];
+    ;
     for (int i = 0; i < size; i++) {
       array[i] = (int) (Math.random() * 10 + 10);
     }
@@ -33,15 +34,15 @@ public class CustomArray {
    * @return the value at index in the array.
    */
   public int getValueAtIndex(int index) {
-    if (index >=0 && index < size)
+    if (index >= 0 && index < size)
       return array[index];
     return 0;
   }
   
   /**
-   * @description check weather value exists in the array.
    * @param value
    * @return true if the value exists in the array, else false.
+   * @description check weather value exists in the array.
    */
   public boolean doesArrayContainThisValue(int value) {
     for (int i = 0; i < array.length; i++) {
@@ -53,8 +54,8 @@ public class CustomArray {
   }
   
   /**
-   * @description delete the value in the array for index in params.
    * @param index
+   * @description delete the value in the array for index in params.
    */
   public void deleteIndex(int index) {
     if (index < size) {
@@ -66,8 +67,8 @@ public class CustomArray {
   }
   
   /**
-   * @description add the value to end of the array.
    * @param value
+   * @description add the value to end of the array.
    */
   public void insertValue(int value) {
     if (size < 100) {
@@ -79,10 +80,10 @@ public class CustomArray {
   }
   
   /**
-   * @description to find the indexes of the value.
-   * @logic traverse through the array, check the value at the index matches the param value, if yes add the indexes to string array and return.
    * @param value
    * @return the index's of the value.
+   * @description to find the indexes of the value.
+   * @logic traverse through the array, check the value at the index matches the param value, if yes add the indexes to string array and return.
    */
   public String linearSearch(int value) {
     String str = "";
@@ -101,6 +102,7 @@ public class CustomArray {
   
   /**
    * This is the worst sort algorithm in terms of time.
+   *
    * @description sort the values in the array.
    * @logic move the biggest number in the array to the end of the array.
    * For every iteration in inner for loop the biggest number moves to the end.
@@ -116,11 +118,11 @@ public class CustomArray {
   }
   
   /**
+   * @param value
    * @description search the value in the array and print.
    * @logic Binary search works based on divide and conquer algorithm.
    * For this algorithm to work the values has to be in sorted order.
    * divide the array into two parts and check the value is present in which part, do this until the value if found.
-   * @param value
    */
   public void binarySearch(int value) {
     
@@ -162,6 +164,7 @@ public class CustomArray {
       swap(minimum, i);
     }
   }
+  
   //Swap the two values in the array based on index.
   private void swap(int a, int b) {
     int temp = array[a];
@@ -183,6 +186,43 @@ public class CustomArray {
       }
       i = j;
     }
+  }
+  
+  
+  public void mergeSort(int[] array, int start, int end) {
+    
+    int low = start;
+    int high = end;
+    int middle = (start + end) / 2;
+    
+    if (low >= high) {
+      return;
+    }
+    mergeSort(array, low, middle);
+    mergeSort(array, middle + 1, end);
+    
+    int end_low = middle;
+    int start_high = middle + 1;
+    
+    while ((low <= end_low) && (start_high <= high)) {
+      
+      if (array[low] < array[start_high]) {
+        low++;
+      } else {
+        int temp = array[start_high];
+        for (int i = start_high - 1; i >= low; i--) {
+          array[i + 1] = array[i];
+        }
+        array[low] = temp;
+        low++;
+        start_high++;
+        end_low++;
+      }
+    }
+    for (int i = 0; i < array.length; i++) {
+      System.out.print("| " + array[i] + " |");
+    }
+    System.out.println();
   }
 }
 
